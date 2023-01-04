@@ -23,11 +23,11 @@ envs:
 - key: DJANGO_SECRET_KEY
   scope: RUN_AND_BUILD_TIME
   type: SECRET
-  value: EV[1:w8aaS/4qnhOJoLOQW4JnsmcjMQWF9Xfv:ZC08ZkUwFhkEzqXYlgtlwh260FWLbe6Zy+c0dqH4nyaqPFDKNF03wFs4D/51604nC0/xkOfDlHf+ldmkzyEsL68S]
+  value: r1o$%mf1%&u4eusta^7qq3nt&v*i@ks^(!siy5qhj-6)&rlx$0
 - key: DJANGO_SUPERUSER_PASSWORD
   scope: RUN_AND_BUILD_TIME
   type: SECRET
-  value: EV[1:O3RwT5emlMu5NlM0wjtqMug22+ojOpid:g/J7lCHyfbL1rdkRTKjLNG6irSM93bZR09h/riIykQw1pCULIsmPCGmWd2S2oxA5dwrRIhAx43UnMw==]
+  value: r1o$%mf1%&u4eusta^7qq3nt&v*i@ks^(!siy5qhj-6)&rlx$0
 - key: POSTGRES_DB
   scope: RUN_AND_BUILD_TIME
   value: ${db.DATABASE}
@@ -46,18 +46,18 @@ envs:
 - key: AWS_ACCESS_KEY_ID
   scope: RUN_AND_BUILD_TIME
   type: SECRET
-  value: EV[1:MvVp4xFdM2EpA5q/NrOF4/0lNMoh/ZXE:E63UbQTTyx9eVTb7nS5D14m/e8K7a+3xt8d9xDV7v82KBImy]
+  value: r1o$%mf1%&u4eusta^7qq3nt&v*i@ks^(!siy5qhj-6)&rlx$0
 - key: AWS_SECRET_ACCESS_KEY
   scope: RUN_AND_BUILD_TIME
   type: SECRET
-  value: EV[1:7m7Qtz9CU81/yRLPx/e/8yv0pMXbvSEc:f6iprDbF7oFPdo1tjTADVm28+gih9LehaGJaKRnSeIYXPGysfU6aM58YU8S+wIcnJxPw4NZdXyqcex4=]
+  value: r1o$%mf1%&u4eusta^7qq3nt&v*i@ks^(!siy5qhj-6)&rlx$0
 - key: AWS_STORAGE_BUCKET_NAME
   scope: RUN_AND_BUILD_TIME
   value: trydjango32
 - key: OCR_API_TOKEN_HEADER
   scope: RUN_AND_BUILD_TIME
   type: SECRET
-  value: EV[1:SjjuB8C+3JScJkhDe6NFYOS19d04Iiw/:LGp9KjNKfBdfHoAZjiVqSmREXLK65XwR/RIFgZYwFi98ayV3ySuQj6je7vNyjPpFzc7RKl4raCmoTvw=]
+  value: r1o$%mf1%&u4eusta^7qq3nt&v*i@ks^(!siy5qhj-6)&rlx$0
 - key: OCR_API_ENDPOINT
   scope: RUN_AND_BUILD_TIME
   value: https://fastapi-microservice-for-django-d3kjd.ondigitalocean.app
@@ -67,9 +67,10 @@ jobs:
   - key: DATABASE_URL
     scope: RUN_TIME
     value: ${db.DATABASE_URL}
-  git:
+  github:
     branch: production-3
-    repo_clone_url: https://github.com/codingforentrepreneurs/Try-Django-3.2.git
+    deploy_on_push: true
+    repo: ryankSD/flayver
   instance_count: 1
   instance_size_slug: basic-xxs
   kind: PRE_DEPLOY
@@ -84,9 +85,10 @@ services:
   - key: DATABASE_URL
     scope: RUN_TIME
     value: ${db.DATABASE_URL}
-  git:
+  github:
     branch: production-3
-    repo_clone_url: https://github.com/codingforentrepreneurs/Try-Django-3.2.git
+    deploy_on_push: true
+    repo: ryankSD/flayver
   http_port: 8080
   instance_count: 1
   instance_size_slug: basic-xxs

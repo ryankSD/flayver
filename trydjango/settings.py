@@ -174,7 +174,7 @@ from .cdn.conf import * # noqa
 
 # https://www.cfe.sh/blog/django-static-files-digitalocean-spaces
 
-# https://trydjango.nyc3.digitaloceanspaces.com
+# https://flayver.sfo3.digitaloceanspaces.com
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
