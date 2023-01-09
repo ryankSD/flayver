@@ -3,9 +3,13 @@ import os
 
 from django.core.files import File
 
+from dotenv import load_dotenv
 
-OCR_API_TOKEN_HEADER=os.environ.get("OCR_API_TOKEN_HEADER")
-OCR_API_ENDPOINT=os.environ.get("OCR_API_ENDPOINT")
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+OCR_API_TOKEN_HEADER=os.getenv("OCR_API_TOKEN_HEADER")
+OCR_API_ENDPOINT=os.getenv("OCR_API_ENDPOINT")
 
 def extract_text_via_ocr_service(file_obj: File=None):
     data = {}
